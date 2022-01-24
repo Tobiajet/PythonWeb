@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-webapp
+  labels:
+    app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: webapp
+        image: webapp:1.0
+        ports:
+        - containerPort: {{ .values.service.targetPort }}
+          limits:
+          memory: "128Mi"
+          cpu: "500m"
