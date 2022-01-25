@@ -6,6 +6,8 @@ services:
     image: webapp:2.0
     ports:
       - "80:5000"
+    volumes:
+    - .:/code
     restart: always
     links:
     - redis
@@ -19,5 +21,7 @@ services:
     image: "redis:alpine"
     expose: 
       - 6379
+    volumes:
+    - ./data:/data
 networks:
   webnet:
