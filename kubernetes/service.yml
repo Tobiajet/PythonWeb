@@ -10,5 +10,4 @@ spec:
       # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
     - port: 80
       targetPort: 5000
-      nodeport: 30007
-    #nodePort could be selected automatically
+    #nodePort could be selected automatically when you create the service
