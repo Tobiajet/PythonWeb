@@ -9,5 +9,6 @@ spec:
   ports:
       # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
     - port: 80
-      targetPort: 80
-      nodePort: 30007
+      targetPort: 5000
+      nodeport: 30007
+    #nodePort could be selected automatically
